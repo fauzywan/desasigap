@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get('/', getAllTransportRequest);
 router.get('/:id', getTransportById);
-router.get('/:id', getTransportById);
+
 router.post('/', createTransportRequest);
 router.put('/:id/accept', acceptTransport);
 router.put('/:id/complete', completeTransport);

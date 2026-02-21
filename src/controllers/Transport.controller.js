@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import transport from '../models/transport.model.js';
 import ServiceReport from '../models/service.model.js';
 import reviewModel from '../models/review.model.js';
+import reviewModelCopy from '../models/review.model copy.js';
 export const getAllTransportRequest = async (req, res) => {
   const data = await transport.find().sort({ createdAt: -1 });
   res.status(200).json({
@@ -16,7 +17,7 @@ export const getTransportById = async (req, res) => {
     serviceId: id,
     type: 'report',
   });
-  const review = await reviewModel.findOne({
+  const review = await reviewModelCopy.findOne({
     serviceId: id,
     type: 'review',
   });
